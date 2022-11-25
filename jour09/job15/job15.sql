@@ -1,1 +1,1 @@
-SELECT salles.nom, salles.id_etage FROM salles; 
+SELECT salles.nom, salles.id_etage FROM salles;
