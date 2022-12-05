@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+
    include 'connect.php';
 
    ?>
@@ -23,26 +25,16 @@
 </head>
 <body>
 <header>
-   <?php 
-   include 'header.php';
-   ?>
+
 </header>
 <div class="millieu">
-<?php if(isset($_SESSION["login"])){ ?>
-               <h1>Bonjour <?= $_SESSION["login"]?> </h1>
-                <?php } 
-                else {
-                  echo "<h1>Mode invité sans login</h1>";
-                }
-?>
+<img src="https://media.tenor.com/pqTCFxqhfN4AAAAM/locked-up-akon.gif" alt="">
     
 
 
 </div>
 <footer>
-<?php
-   include 'footer.php';
-   ?>
+
 </footer>
 </body>
 </html>

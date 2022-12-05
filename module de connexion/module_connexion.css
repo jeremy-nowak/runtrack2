@@ -126,3 +126,10 @@ footer{
     justify-content: center;
     align-items: center;
 }
+
+.millieu img{
+    background-image: url("https://media.tenor.com/pqTCFxqhfN4AAAAM/locked-up-akon.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}

@@ -2,6 +2,9 @@
 //MysQl connexion:
 
 $mysqli = mysqli_connect("localhost", "root", "", "moduleconnexion");
+if(isset($_USER["user"])){
+    header("location: profil.php");
+}
 
 
 

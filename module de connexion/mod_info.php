@@ -63,9 +63,6 @@ if(isset($_POST['button'])){
                 <input type="password" placeholder="Confirmation nouveau password" name="password_conf" id="password"><br>
                 
                 <br>
-                <?php if(isset($mess_passwd)){ ?>
-                <?= $mess_passwd ?>
-                <?php } ?>
 
                  <br>
                  <br>
@@ -74,6 +71,22 @@ if(isset($_POST['button'])){
                 <?php if(isset($mess_error)){ ?>
                     <span><p><?= $mess_error ?></p></span>
                 <?php } ?>
+                <?php if(isset($mess_passwd)){ ?>
+                <?= $mess_passwd ?>
+                <?php } ?>
+<?php
+
+if(isset($_POST['button'])&& $_POST['password']==$_POST['password_conf']);{
+$id = $_SESSION['login'];
+$nom = $_POST['name'];
+$prenom = $_POST['prenom'];
+$login = $_POST['login'];
+$password = $_POST['password'];
+
+$update = "UPDATE utilisateur SET nom = '$nom', prenom = '$prenom', login = '$login', password = '$password' WHERE id = $id";
+
+}
+?>
 
             </fieldset>
          </form>
