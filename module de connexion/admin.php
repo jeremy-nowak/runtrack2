@@ -20,11 +20,7 @@
     <h1>Bonjour <?= $_SESSION["login"]?> </h1>
     <h1>Voici les informations de la base de donnée<br></h1>
     <?php
-    var_dump($login);
-if (!isset($_SESSION["user"]) || $_SESSION["user"] != "admin"){
-    header("location: prison.php");
 
-}
    
  
     

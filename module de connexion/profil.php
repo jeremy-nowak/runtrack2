@@ -66,10 +66,10 @@ $insc="";
       $prenom=$_POST['prenom'];
       $pass=$_POST['password'];
       $repass=$_POST['password_conf'];
-      $update = "UPDATE utilisateurs SET nom='$nom', prenom='$prenom', password='$pass' WHERE id='$id'";
+      $update = "UPDATE utilisateurs SET nom='$nom', prenom='$prenom', password='$pass' WHERE login='$id'";
       $request = $connect->query($update);
       $insc="Modification effectuer" ;
-      var_dump($update);
+      var_dump($request);
 
 
 
