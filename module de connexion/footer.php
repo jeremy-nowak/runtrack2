@@ -18,7 +18,7 @@
      <div class="bloc-footer-services">
          <h3>Mes liens:</h3>
          <ul class="liste-service">
-            <li> <a href="https://github.com/jeremy-nowak">Mon github</a></li>
+            <li> <a href="https://github.com/jeremy-nowak/runtrack2/tree/main/module%20de%20connexion">Repos Github module_connexion</a></li>
 
 
          </ul>
