@@ -16,7 +16,7 @@
    <?php 
    include 'header.php';
    ?>
-       <h1>Bonjour <?= $_SESSION["login"]?> </h1>
+       <h1>Bonjour <?= $_SESSION['login']?> </h1>
 </header>
 <div class="millieu">
    
@@ -31,6 +31,11 @@
                 <input type="text" placeholder="Changer le prenom" name="prenom" id="prenom"><br>
                 
                 <br>
+                <br>
+             
+               <input type="text" placeholder="Changer le login" name="login" id="login"><br>
+             
+               <br>
                 <input type="password" placeholder="Nouveau password" name="password" id="password"><br>
                 <br>
                 <input type="password" placeholder="Confirmation nouveau password" name="password_conf" id="password"><br>
@@ -48,20 +53,27 @@
                 <?= $mess_passwd ?>
                 <?php } ?>
 <?php
-if(!isset($_SESSION['login'])){
-   header("location: connexion.php");
-}
-$insc="";
-if(isset($_POST['button'])&& $_POST['password']==$_POST['password_conf'] ){
-   $user=mysqli_fetch_assoc($req);
-   $nom=$_POST['name'];
-   $prenom=$_POST['prenom'];
-   $pass=$_POST['password'];
-   $repass=$_POST['password_conf'];
+// if(!isset($_SESSION['login'])){
+//    header("location: connexion.php");
+// }
 
-   $update = "UPDATE utilisateurs SET nom='$nom', prenom='$prenom', password='$pass' WHERE login =$login";
-   $request = $mysqli->query($update);
-   $insc="Modification effectuer" ;
+$insc="";
+   if(isset($_POST['button'])&& $_POST['password']==$_POST['password_conf'] ){
+      
+      $user=mysqli_fetch_assoc($req);
+      $id = $_SESSION['login'];
+      $nom=$_POST['name'];
+      $prenom=$_POST['prenom'];
+      $pass=$_POST['password'];
+      $repass=$_POST['password_conf'];
+      $update = "UPDATE utilisateurs SET nom='$nom', prenom='$prenom', password='$pass' WHERE id='$id'";
+      $request = $connect->query($update);
+      $insc="Modification effectuer" ;
+      var_dump($update);
+
+
+
+
 }
 else{
    $insc= "Information vide ou incorrect";

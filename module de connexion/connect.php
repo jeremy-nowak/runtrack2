@@ -16,7 +16,7 @@ if(isset($_POST['button'])){
     $password = $_POST['password'];
     $req = mysqli_query($connect,"SELECT login, password FROM utilisateurs WHERE login='$login' AND password='$password'");    
     
-    
+
     if(mysqli_num_rows($req)===1){
         $user=mysqli_fetch_assoc($req);
 
@@ -36,13 +36,7 @@ if(isset($_POST['button'])){
 
         }   
         
-        else{
 
-            echo "veuillez remplir tout les champs ";
-            unset($_SESSION["login"]);
-
-
-         }
 
         
     }

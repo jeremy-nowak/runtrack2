@@ -1,35 +1,7 @@
 <?php
    include 'connect.php'
 ?>
-<?php
-if(isset($_POST['button'])){
 
-   //$check = 1;
-   $login = $_POST['login'];
-   $password = $_POST['password'];
-   $req = mysqli_query($connect,"SELECT login, password FROM utilisateurs WHERE login='$login' AND password='$password'");    
-   
-   if(mysqli_num_rows($req)===1){
-
-           $user=mysqli_fetch_assoc($req);
-
-           if($user['login']=='admin'){
-               header('location: admin.php');
-       
-           
-           }elseif($user['login']== $login){
-               header('location: profil.php');
-           }
-
-       }   
-       
-       else{
-
-           echo "veuillez remplir tout les champs ";
-        }
-       
-   }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,8 +16,10 @@ if(isset($_POST['button'])){
    <?php 
    include 'header.php';
    ?>
+       <h1>Bonjour <?= $_SESSION["login"]?> </h1>
 </header>
 <div class="millieu">
+   
    <div class="formulaire">
       <form method="post"> 
             <fieldset>
@@ -55,8 +29,7 @@ if(isset($_POST['button'])){
                 <br>
              
                 <input type="text" placeholder="Changer le prenom" name="prenom" id="prenom"><br>
-                <br>
-                <input type="text" placeholder="Login" name="login" id="login"><br>
+                
                 <br>
                 <input type="password" placeholder="Nouveau password" name="password" id="password"><br>
                 <br>
@@ -76,17 +49,9 @@ if(isset($_POST['button'])){
                 <?php } ?>
 <?php
 
-if(isset($_POST['button'])&& $_POST['password']==$_POST['password_conf']);{
-$id = $_SESSION['login'];
-$nom = $_POST['name'];
-$prenom = $_POST['prenom'];
-$login = $_POST['login'];
-$password = $_POST['password'];
-
-$update = "UPDATE utilisateur SET nom = '$nom', prenom = '$prenom', login = '$login', password = '$password' WHERE id = $id";
-
-}
 ?>
+
+
 
             </fieldset>
          </form>
