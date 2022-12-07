@@ -33,7 +33,7 @@
      <div class="bloc-footer-services">
          <h3>Mes liens:</h3>
          <ul class="liste-service">
-            <li> <a href="">Mon Plesk</a></li>
+            <li> <a href="https://students-laplateforme.io:8443/smb/file-manager/list">Mon Plesk</a></li>
 
          </ul>
          

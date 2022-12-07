@@ -1,7 +1,8 @@
 <?php
 //MysQl connexion:
-
-$mysqli = mysqli_connect("localhost", "root", "", "moduleconnexion");
+   include 'connect.php';
+// $mysqli = mysqli_connect("localhost", "root", "", "moduleconnexion");
+//$connect = mysqli_connect("localhost", "jeremy", "ultraplesk83", "jeremy-nowak_module");
 if(isset($_USER["user"])){
     header("location: profil.php");
 }
@@ -21,7 +22,7 @@ if(isset($_POST['soumettre'])){
     // !empty permet de verifier que tout les champs soit rempli -->
     if(isset($_POST["name"],$_POST["prenom"], $_POST["login"], $_POST["password"]) && !empty($_POST["name"]) && !empty($_POST["prenom"]) && !empty($_POST["login"]) && !empty($_POST["password"]))
     {
-        $req = mysqli_query($mysqli,"SELECT login, password FROM utilisateurs");    
+        $req = mysqli_query($connect,"SELECT login, password FROM utilisateurs");    
 
         $bdd = $req->fetch_all();
 
@@ -42,7 +43,7 @@ if(isset($_POST['soumettre'])){
 }
             //si toutes les conditions enuméré sont validé y compris la variable $check alors on enregistrera les informations d'inscription
 if(isset($_POST['soumettre']) && isset($_POST["name"],$_POST["prenom"], $_POST["login"], $_POST["password"]) && $check ==1){        
-$request = mysqli_query($mysqli, "INSERT INTO utilisateurs (login, prenom, nom, password) VALUES ('$login','$prenom','$nom','$password')");header("location:connexion.php");
+$request = mysqli_query($connect, "INSERT INTO utilisateurs (login, prenom, nom, password) VALUES ('$login','$prenom','$nom','$password')");header("location:connexion.php");
 
 }
 
